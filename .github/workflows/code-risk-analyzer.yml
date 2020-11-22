@@ -1,0 +1,27 @@
+name: 'code-risk-analyzer'
+
+on:
+  push: {branches: main}
+  pull_request: {branches: main}
+
+jobs:
+  code-risk-analyzer:
+    # Name the Job
+    name: Code Risk Analyzer
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Runs the Super-Linter action
+      - name: Run Code Risk Analyzer
+        uses: Fizz-Q/code-risk-analyzer
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci
+      - run: npm install
+      - run: npm test

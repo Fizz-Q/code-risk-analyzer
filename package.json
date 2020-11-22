@@ -1,0 +1,16 @@
+{
+  "name": "hourglass-code-risk-analyzer",
+  "version": "1.0.0",
+  "description": "code analyzer that calculates file quality and identifies quality risk level",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Faisal Qureshi",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "github-api": "^3.3.0"
+  }
+}
