@@ -26,3 +26,9 @@ Simply enable this tool as an action in your github repository.  The full list o
 
 The action requires the repo name, user, and github api token as inputs to execute.
 
+## Example Output
+analyzing...
+SOURCE FILE: src/com/hourglasssoftware/bugpredictor/JiraManager.java  RISK SCORE:2.806338028169014
+SOURCE FILE: src/com/hourglasssoftware/bugpredictor/runner/HourglassBugPredictor.java  RISK SCORE:2.4836747759282973
+SOURCE FILE: src/com/hourglasssoftware/bugpredictor/DataManager.java  RISK SCORE:2.422215108834827
+SOURCE FILE: src/com/hourglasssoftware/bugpredictor/BugPredictor.java  RISK SCORE:2.2877720870678617

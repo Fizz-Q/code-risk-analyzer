@@ -34,12 +34,11 @@ const repository = core.getInput('repo');
 const user = core.getInput('user');
 const token = core.getInput('token');
 
-//basic auth
-/*var repo = new Repository('HBOCodeLabs/delos',{//('Fizz-Q/hourglass-bug-predictor',{
-   //username: 'Fizz-Q',
-   //token: '7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15'
-   username: 'fizz-HBO',
-   token: '3e1eb043d1e85a180374216607421a911f8ed6b8'
+/*var repo = new Repository('Fizz-Q/hourglass-bug-predictor',{//('HBOCodeLabs/delos',{
+   username: 'Fizz-Q',
+   token: '7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15'
+   //username: 'fizz-HBO',
+   //token: '3e1eb043d1e85a180374216607421a911f8ed6b8'
 }, 'https://api.github.com');*/
 
 var repo = new Repository(repository,{

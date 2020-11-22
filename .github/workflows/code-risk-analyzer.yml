@@ -16,7 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Runs the Super-Linter action
       - name: Run Code Risk Analyzer
         uses: Fizz-Q/code-risk-analyzer
         env:
