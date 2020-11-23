@@ -30,7 +30,7 @@ class FileStatistics{
 
 var files = [];
 var commitsList = [];
-const repository = core.getInput('repository');
+const repository = github.repository; //core.getInput('repository');
 const user = core.getInput('user');
 const token = core.getInput('token');
 
