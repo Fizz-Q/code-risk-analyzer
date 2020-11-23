@@ -20,7 +20,7 @@ jobs:
         uses: Fizz-Q/code-risk-analyzer@v1
         with:
           repository: ${{ github.event.repository.name }}
-          token: '7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15' #${{ secrets.GITHUB_TOKEN }}
+          token: 7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15 #${{ secrets.GITHUB_TOKEN }}
           user: ${{ github.repository_owner }}
         env:
           DEFAULT_BRANCH: main
