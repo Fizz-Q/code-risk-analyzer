@@ -4,6 +4,7 @@ inputs:
   repository:  # repo
     description: 'repo to analyze'
     required: true
+    Default: 'test2'
   user:  # repo
     description: 'user for repo'
     required: true
