@@ -30,6 +30,7 @@ class FileStatistics{
 
 var files = [];
 var commitsList = [];
+async function run() {
 const repository = core.getInput('repository');
 const user = core.getInput('user');
 const token = core.getInput('token');
@@ -46,6 +47,8 @@ console.log("REP:"+repository);
 console.log("USR:"+user);
 console.log("TOK:"+github_token);
 console.log("TEST:"+github.repository);
+}
+run();
 
 var repo = new Repository(repository,{
    username: user,
