@@ -41,7 +41,7 @@ const token = core.getInput('token');
    //token: '3e1eb043d1e85a180374216607421a911f8ed6b8'
 }, 'https://api.github.com');*/
 
-console.log(`REP ${repository}`);
+console.log("REP:"+repository);
 console.log("USR:"+user);
 console.log("TOK:"+token);
 
