@@ -45,7 +45,7 @@ const github_token = core.getInput('GITHUB_TOKEN');
 
 console.log("REP:"+process.env.INPUT_REPOSITORY);
 console.log("USR:"+user);
-console.log("TOK:"+github_token);
+console.log("TOK:"+process.env.GITHUB_TOKEN);
 console.log("TEST:"+github.repository);
 
 
