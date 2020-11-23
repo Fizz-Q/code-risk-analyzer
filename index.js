@@ -33,6 +33,7 @@ var commitsList = [];
 const repository = core.getInput('repository');
 const user = core.getInput('user');
 const token = core.getInput('token');
+const github_token = core.getInput('GITHUB_TOKEN');
 
 /*var repo = new Repository('Fizz-Q/hourglass-bug-predictor',{//('HBOCodeLabs/delos',{
    username: 'Fizz-Q',
@@ -43,7 +44,8 @@ const token = core.getInput('token');
 
 console.log("REP:"+repository);
 console.log("USR:"+user);
-console.log("TOK:"+token);
+console.log("TOK:"+github_token);
+console.log("TEST:"+github.repository);
 
 var repo = new Repository(repository,{
    username: user,
