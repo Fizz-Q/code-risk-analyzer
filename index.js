@@ -4,7 +4,7 @@
 
 var GitHub = require('github-api');
 var Repository =  require('github-api/dist/components/Repository');
-import * as core from '@actions/core';
+const core =  require('@actions/core');
 const github = require('@actions/github');
 
 class FileStatistics{
@@ -43,7 +43,7 @@ const github_token = core.getInput('GITHUB_TOKEN');
    //token: '3e1eb043d1e85a180374216607421a911f8ed6b8'
 }, 'https://api.github.com');*/
 
-console.log("REP:"+repository);
+console.log("REP:"+process.env.INPUT_REPOSITORY);
 console.log("USR:"+user);
 console.log("TOK:"+github_token);
 console.log("TEST:"+github.repository);
@@ -59,9 +59,9 @@ repo.listCommits({per_page: 300},function(err, commits){
       commitsList.push(commits[x].sha);
 
    }
-   processCommits()
+   processCommits();
    
-})
+});
 
 async function processCommits() {
    console.log("analyzing...");
