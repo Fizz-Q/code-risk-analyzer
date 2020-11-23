@@ -18,12 +18,13 @@ jobs:
 
       - name: Run Code Risk Analyzer
         uses: Fizz-Q/code-risk-analyzer@v1
+        with:
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: ${{ github.repository_owner }}
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INPUT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          INPUT_USER: ${{github.repository_owner}}
-          INPUT_REPOSITORY: ${{github.repository}}
       - run: npm ci
       - run: npm install
       - run: npm test
