@@ -31,24 +31,9 @@ class FileStatistics{
 var files = [];
 var commitsList = [];
 
-//async function run() {
-
 const repository = core.getInput('repository');
 const user = core.getInput('user');
-//const token = core.getInput('token');
 const token = process.env['GITHUB_TOKEN'];
-
-/*var repo = new Repository('Fizz-Q/hourglass-bug-predictor',{//('HBOCodeLabs/delos',{
-   username: 'Fizz-Q',
-   token: '7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15'
-   //username: 'fizz-HBO',
-   //token: '3e1eb043d1e85a180374216607421a911f8ed6b8'
-}, 'https://api.github.com');*/
-
-console.log("REP:"+repository);
-console.log("USR:"+user);
-console.log("TOK:"+token);
-//console.log("TEST:"+github_token);
 
 var repo = new Repository(repository,{
    username: user,
@@ -63,9 +48,6 @@ repo.listCommits({per_page: 300},function(err, commits){
    processCommits();
    
 });
-//}
-
-//run();
 
 async function processCommits() {
    console.log("analyzing...");
@@ -263,11 +245,6 @@ async function result(){
    for(var x=0; x< files.length; x++){
       console.log("SOURCE FILE: "+files[x].filename+"  RISK SCORE:"+files[x].score);
    }
-   core.setOutput("topRiskFile1", "SOURCE FILE: "+files[0].filename+"  RISK SCORE:"+files[0].score);
-   core.setOutput("topRiskFile2", "SOURCE FILE: "+files[1].filename+"  RISK SCORE:"+files[1].score);
-   core.setOutput("topRiskFile3", "SOURCE FILE: "+files[3].filename+"  RISK SCORE:"+files[3].score);
-   core.setOutput("topRiskFile4", "SOURCE FILE: "+files[4].filename+"  RISK SCORE:"+files[4].score);
-   core.setOutput("message", "see console logs for full results");
 }
 
 function compare(a, b) {
