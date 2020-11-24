@@ -31,7 +31,7 @@ class FileStatistics{
 var files = [];
 var commitsList = [];
 
-async function run() {
+//async function run() {
 
 const repository = core.getInput('repository');
 const user = core.getInput('user');
@@ -55,7 +55,7 @@ var repo = new Repository(repository,{
    token: token
 }, 'https://api.github.com');
 
-await repo.listCommits({per_page: 300},function(err, commits){
+repo.listCommits({per_page: 300},function(err, commits){
    for(var x=0; x < commits.length; x++){
       commitsList.push(commits[x].sha);
 
@@ -63,9 +63,9 @@ await repo.listCommits({per_page: 300},function(err, commits){
    processCommits();
    
 });
-}
+//}
 
-run();
+//run();
 
 async function processCommits() {
    console.log("analyzing...");
