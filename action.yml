@@ -1,7 +1,7 @@
 name: 'Code Risk Analyzer'
 description: 'Analyze Source code files to determine defect risk'
 inputs:
-  test:  # repo
+  repository:  # repo
     description: 'repo to analyze'
     required: true
     default: 'test2'
