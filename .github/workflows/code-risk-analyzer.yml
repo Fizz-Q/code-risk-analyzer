@@ -17,11 +17,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Code Risk Analyzer
-        uses: Fizz-Q/code-risk-analyzer@v1
-        #uses: ./
+        #uses: Fizz-Q/code-risk-analyzer@v1
+        uses: ./
         with:
           repository: ${{ github.repository }}
-          token: '7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15' #${{ secrets.GITHUB_TOKEN }}
+          #token: '7dc4e17d041bb08e4b58b0b79a237ab81cc1bc15' #${{ secrets.GITHUB_TOKEN }}
           user: ${{ github.repository_owner }}
         env:
           DEFAULT_BRANCH: main

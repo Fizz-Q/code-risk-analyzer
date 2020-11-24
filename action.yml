@@ -8,9 +8,9 @@ inputs:
   user:  # repo
     description: 'user for repo'
     required: true
-  token:  # repo
-    description: 'github api token' #${{ secrets.GITHUB_TOKEN }}
-    required: true
+  #token:  # repo
+    #description: 'github api token' #${{ secrets.GITHUB_TOKEN }}
+    #required: true
 runs:
   using: 'node12'
   main: 'index.js'
