@@ -35,8 +35,8 @@ async function run() {
 
 const repository = core.getInput('repository');
 const user = core.getInput('user');
-const token = core.getInput('token');
-const github_token = core.getInput('GITHUB_TOKEN');
+//const token = core.getInput('token');
+const token = process.env['GITHUB_TOKEN'];
 
 /*var repo = new Repository('Fizz-Q/hourglass-bug-predictor',{//('HBOCodeLabs/delos',{
    username: 'Fizz-Q',
@@ -47,8 +47,8 @@ const github_token = core.getInput('GITHUB_TOKEN');
 
 console.log("REP:"+repository);
 console.log("USR:"+user);
-console.log("TOK:"+process.env['GITHUB_TOKEN']);
-console.log("TEST:"+github_token);
+console.log("TOK:"+token);
+//console.log("TEST:"+github_token);
 
 var repo = new Repository(repository,{
    username: user,
