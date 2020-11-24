@@ -31,6 +31,8 @@ class FileStatistics{
 var files = [];
 var commitsList = [];
 
+async function run() {
+
 const repository = core.getInput('repository');
 const user = core.getInput('user');
 const token = core.getInput('token');
@@ -43,11 +45,10 @@ const github_token = core.getInput('GITHUB_TOKEN');
    //token: '3e1eb043d1e85a180374216607421a911f8ed6b8'
 }, 'https://api.github.com');*/
 
-console.log("REP:"+process.env.INPUT_REPOSITORY);
+console.log("REP:"+repository);
 console.log("USR:"+user);
-console.log("TOK:"+process.env.GITHUB_TOKEN);
-console.log("TEST:"+github.repository);
-
+console.log("TOK:"+process.env['GITHUB_TOKEN']);
+console.log("TEST:"+github_token);
 
 var repo = new Repository(repository,{
    username: user,
@@ -62,6 +63,9 @@ repo.listCommits({per_page: 300},function(err, commits){
    processCommits();
    
 });
+}
+
+run();
 
 async function processCommits() {
    console.log("analyzing...");
