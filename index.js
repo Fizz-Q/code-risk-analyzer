@@ -55,7 +55,7 @@ var repo = new Repository(repository,{
    token: token
 }, 'https://api.github.com');
 
-repo.listCommits({per_page: 300},function(err, commits){
+await repo.listCommits({per_page: 300},function(err, commits){
    for(var x=0; x < commits.length; x++){
       commitsList.push(commits[x].sha);
 

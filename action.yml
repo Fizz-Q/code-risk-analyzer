@@ -1,7 +1,7 @@
 name: 'Code Risk Analyzer'
 description: 'Analyze Source code files to determine defect risk'
 inputs:
-  repository:  # repo
+  test:  # repo
     description: 'repo to analyze'
     required: true
     default: 'test2'
@@ -11,17 +11,6 @@ inputs:
   token:  # repo
     description: 'github api token' #${{ secrets.GITHUB_TOKEN }}
     required: true
-outputs:
-  topRiskFile1:
-    description: 'top risk file'
-  topRiskFile2:
-    description: 'top risk file 2'
-  topRiskFile3:
-    description: 'top risk file 3'
-  topRiskFile4:
-    description: 'top risk file 4'
-  message:
-    description: "see console log for full results"
 runs:
   using: 'node12'
   main: 'index.js'
