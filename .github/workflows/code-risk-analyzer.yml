@@ -26,6 +26,6 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm ci
-        run: npm install
-        run: npm test
+      - run: npm ci
+      - run: npm install
+      - run: npm test
