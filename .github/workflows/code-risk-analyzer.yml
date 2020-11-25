@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Code Risk Analyzer
-        uses: ./
+        uses: Fizz-Q/code-risk-analyzer@v1
         with:
           repository: ${{ github.repository }}
           user: ${{ github.repository_owner }}
