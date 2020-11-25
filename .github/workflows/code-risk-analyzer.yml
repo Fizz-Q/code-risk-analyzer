@@ -18,13 +18,13 @@ jobs:
 
       - name: Run Code Risk Analyzer
         uses: ./
-        with:
+        #with:
           # ${{ github.repository }}
-          repository: 
+          #repository: 
           # ${{ github.repository_owner }}
-          user:
+          #user:
         env:
           # ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #REPO: ${{ github.repository }}
-          #USR: ${{ github.repository_owner }}
+          REPO: ${{ github.repository }}
+          USR: ${{ github.repository_owner }}

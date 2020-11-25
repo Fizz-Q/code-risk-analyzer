@@ -31,10 +31,11 @@ class FileStatistics{
 var files = [];
 var commitsList = [];
 
-const repository = core.getInput('repository');
-const user = core.getInput('user');
+//const repository = core.getInput('repository');
+//const user = core.getInput('user');
 const token = process.env['GITHUB_TOKEN'];
-//const repository = process.env['REPO'];
+const repository = process.env['REPO'];
+const user = process.env['USR'];
 
 
 var repo = new Repository(repository,{
