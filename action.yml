@@ -7,6 +7,9 @@ inputs:
   user:  # repo
     description: 'user for repo'
     required: true
+  github_token:  # repo
+    description: 'github token'
+    required: true
 runs:
   using: 'node12'
   main: 'index.js'
