@@ -242,6 +242,7 @@ async function calcScore(){
 
 async function result(){
    files.sort(compare);
+   console.log("Analysis Complete.  Results and risk scores for source files from highest to lowest risk:")
    for(var x=0; x< files.length; x++){
       console.log("SOURCE FILE: "+files[x].filename+"  RISK SCORE:"+files[x].score);
    }

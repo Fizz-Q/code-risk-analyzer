@@ -9,10 +9,7 @@ jobs:
     # Name the Job
     name: Code Risk Analyzer
     # Set the type of machine to run on
-    strategy:
-      matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-latest
 
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
