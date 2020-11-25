@@ -4,11 +4,11 @@ inputs:
   repository:  
     description: 'full repo name to analyze'
     required: true
-    default: ${{ github.repository }}
+    default: '${{ github.repository }}'
   user:  
     description: 'user for repo access'
     required: true
-    default: ${{ github.repository_owner }}
+    default: '${{ github.repository_owner }}''
 runs:
   using: 'node12'
   main: 'index.js'
