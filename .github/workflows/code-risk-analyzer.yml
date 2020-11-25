@@ -20,9 +20,11 @@ jobs:
         uses: ./
         with:
           # ${{ github.repository }}
-          repository: #${{ github.repository }}
+          repository: 
           # ${{ github.repository_owner }}
-          user: #${{ github.repository_owner }}
+          user:
         env:
           # ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #REPO: ${{ github.repository }}
+          #USR: ${{ github.repository_owner }}
