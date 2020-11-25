@@ -28,6 +28,7 @@ The action requires the repo name, user, and github api token as inputs to execu
 
 ## Example Output
 analyzing... <br />
+Analysis Complete.  Results and risk scores for source files from highest to lowest risk: <br />
 SOURCE FILE: src/com/hourglasssoftware/bugpredictor/JiraManager.java  RISK SCORE:2.806338028169014 <br />
 SOURCE FILE: src/com/hourglasssoftware/bugpredictor/runner/HourglassBugPredictor.java  RISK SCORE:2.4836747759282973<br />
 SOURCE FILE: src/com/hourglasssoftware/bugpredictor/DataManager.java  RISK SCORE:2.422215108834827<br />
