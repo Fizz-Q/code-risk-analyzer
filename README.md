@@ -47,7 +47,7 @@ The action requires the repo name, user, and github api token as inputs to execu
             uses: actions/checkout@v2
 
           - name: Run Code Risk Analyzer
-            uses: ./
+            uses: Fizz-Q/code-risk-analyzer@v1.22
             with:
               # ${{ github.repository }}
               repository: ${{ github.repository }}
