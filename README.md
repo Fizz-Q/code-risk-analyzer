@@ -27,33 +27,34 @@ Simply enable this tool as an action in your github repository.  The full list o
 The action requires the repo name, user, and github api token as inputs to execute.
 
 ### Workflow
-name: 'code-risk-analyzer'
 
-on:
-  push: {branches: main}
-  pull_request: {branches: main}
+    name: 'code-risk-analyzer'
 
-jobs:
-  code-risk-analyzer:
-    # Name the Job
-    name: Code Risk Analyzer
-    # Set the type of machine to run on
-    runs-on: ubuntu-latest
+    on:
+      push: {branches: main}
+      pull_request: {branches: main}
 
-    steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Checkout code
-        uses: actions/checkout@v2
+    jobs:
+      code-risk-analyzer:
+        # Name the Job
+        name: Code Risk Analyzer
+        # Set the type of machine to run on
+        runs-on: ubuntu-latest
 
-      - name: Run Code Risk Analyzer
-        uses: ./
-        with:
-          # ${{ github.repository }}
-          repository: ${{ github.repository }}
-          # ${{ github.repository_owner }}
-          user: ${{ github.repository_owner }}
-          # ${{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+          # Checks out a copy of your repository on the ubuntu-latest machine
+          - name: Checkout code
+            uses: actions/checkout@v2
+
+          - name: Run Code Risk Analyzer
+            uses: ./
+            with:
+              # ${{ github.repository }}
+              repository: ${{ github.repository }}
+              # ${{ github.repository_owner }}
+              user: ${{ github.repository_owner }}
+              # ${{ secrets.GITHUB_TOKEN }}
+              github_token: ${{ secrets.GITHUB_TOKEN }}
 
 ## Example Output
 analyzing... <br />
