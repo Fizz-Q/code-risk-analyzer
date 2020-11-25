@@ -20,8 +20,8 @@ jobs:
         uses: ./
         with:
           # ${{ github.repository }}
-          repository: ${{ github.repository }}
+          repository: #${{ github.repository }}
           # ${{ github.repository_owner }}
-          user: ${{ github.repository_owner }}
+          user: #${{ github.repository_owner }}
           # ${{ secrets.GITHUB_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: #${{ secrets.GITHUB_TOKEN }}
