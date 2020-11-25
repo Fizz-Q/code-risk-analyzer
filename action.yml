@@ -9,10 +9,6 @@ inputs:
     description: 'user for repo access'
     required: true
     default: ${{ github.repository_owner }}
-  github_token:  
-    description: 'github api token'
-    required: true
-    default: ${{ secrets.GITHUB_TOKEN }}
 runs:
   using: 'node12'
   main: 'index.js'

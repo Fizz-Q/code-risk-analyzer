@@ -33,7 +33,7 @@ var commitsList = [];
 
 const repository = core.getInput('repository');
 const user = core.getInput('user');
-const token = core.getInput('github_token');
+const token = process.env['GITHUB_TOKEN']
 
 var repo = new Repository(repository,{
    username: user,
