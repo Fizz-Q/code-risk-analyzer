@@ -18,13 +18,7 @@ jobs:
 
       - name: Run Code Risk Analyzer
         uses: ./
-        #with:
-          # ${{ github.repository }}
-          #repository: 
-          # ${{ github.repository_owner }}
-          #user:
-        env:
-          # ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
-          USR: ${{ github.repository_owner }}
+        with:
+          repository: ${{ github.repository }}
+          user: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}

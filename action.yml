@@ -1,14 +1,15 @@
 name: 'Code Risk Analyzer'
 description: 'Analyze Source code files to determine defect risk'
-#inputs:
-  #repository:  
-    #description: 'full repo name to analyze'
-    #required: true
-    #default: ${{ github.repository }}
-  #user:  
-    #description: 'user for repo access'
-    #required: true
-    #default: ${{ github.repository_owner }}
+inputs:
+  repository:  
+    description: 'full repo name to analyze - use ${{ github.repository }}'
+    required: true
+  user:  
+    description: 'user for repo access - use ${{ github.repository_owner }}'
+    required: true
+  github_token:
+    description: 'github api token - use ${{ secrets.GITHUB_TOKEN }}'
+    required: true
 runs:
   using: 'node12'
   main: 'index.js'
