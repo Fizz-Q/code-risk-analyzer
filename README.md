@@ -3,7 +3,7 @@
 # Hourglass Code Risk Analyzer
 
 Hourglass Code Risk Analyzer is a CI/CD tools as a github action that
-anallyzes your source files to determine which files have the highest
+analyzes your source files to determine which files have the highest
 risk of potential defects.  It uses the past 300 commits of your github repository and gets source code statitics per commit, and then uses a proprietory formula to calcuate the risk score per file.  Data for each file per commit is used to calculate a risk score such as:
 
 1. number of commits in past 7 days
