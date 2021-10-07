@@ -6,6 +6,7 @@ var GitHub = require('github-api');
 var Repository =  require('github-api/dist/components/Repository');
 const core =  require('@actions/core');
 const github = require('@actions/github');
+const fs = require('fs');
 
 class FileStatistics{
 
@@ -31,16 +32,22 @@ class FileStatistics{
 var files = [];
 var commitsList = [];
 
-const repository = core.getInput('repository');
-const user = core.getInput('user');
-const token = core.getInput('github_token');
-
+var commandlineArgs = process.argv.slice(2);
+var repository = commandlineArgs[0];
+var user = commandlineArgs[1];
+var token = commandlineArgs[2];
+//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
 var repo = new Repository(repository,{
    username: user,
    token: token
 }, 'https://api.github.com');
 
+console.log(repository);
+console.log(user);
+console.log(token);
+
 repo.listCommits({per_page: 300},function(err, commits){
+	console.log(err);
    for(var x=0; x < commits.length; x++){
       commitsList.push(commits[x].sha);
 
@@ -243,9 +250,19 @@ async function calcScore(){
 async function result(){
    files.sort(compare);
    console.log("Analysis Complete.  Results and risk scores for source files from highest to lowest risk:")
+   var results = "";
    for(var x=0; x< files.length; x++){
+	  results+=files[x].filename+","+files[x].score+"\n";
       console.log("SOURCE FILE: "+files[x].filename+"  RISK SCORE:"+files[x].score);
    }
+   var path = "../output/risk_analyzer_results.csv";
+   fs.writeFile(path, results,  err => {
+		if (err) {
+			console.error(err)
+			return
+		}
+		//file written successfully
+	})
 }
 
 function compare(a, b) {
