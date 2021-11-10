@@ -8,6 +8,8 @@ const core =  require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 
+console.log("for test");
+
 class FileStatistics{
 
    constructor(){
